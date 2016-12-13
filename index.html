@@ -22,7 +22,7 @@
               <img class="activator" src="Gates\and.jpg">
             </div>
             <div class="card-content">
-              <span class="card-title">AND<i class="material-icons right">more_vert</i></span>
+              <span class="card-title">AND<i class="material-icons right activator">more_vert</i></span>
             </div>
             <div class="card-reveal">
               <span class="card-title grey-text text-darken-4">AND Gate (∧)<i class="material-icons right">close</i></span>
@@ -38,7 +38,7 @@
                 <img class="activator" src="Gates\not.jpg">
               </div>
               <div class="card-content">
-                <span class="card-title">NOT<i class="material-icons right">more_vert</i></span>
+                <span class="card-title">NOT<i class="material-icons right activator">more_vert</i></span>
               </div>
               <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">Not Gate (¬)<i class="material-icons right">close</i></span>
@@ -54,7 +54,7 @@
               <img class="activator" src="Gates\or.jpg">
             </div>
             <div class="card-content">
-              <span class="card-title">OR<i class="material-icons right">more_vert</i></span>
+              <span class="card-title">OR<i class="material-icons right activator">more_vert</i></span>
             </div>
             <div class="card-reveal">
               <span class="card-title grey-text text-darken-4">Or Gate (∨)<i class="material-icons right">close</i></span>
@@ -75,7 +75,7 @@
               <img class="activator" src="Gates\nor.jpg">
             </div>
             <div class="card-content">
-              <span class="card-title">NOR<i class="material-icons right">more_vert</i></span>
+              <span class="card-title">NOR<i class="material-icons right activator">more_vert</i></span>
             </div>
             <div class="card-reveal">
               <span class="card-title grey-text text-darken-4">Not Or Gate (¬∨)<i class="material-icons right">close</i></span>
@@ -91,7 +91,7 @@
                 <img class="activator" src="Gates\nand.jpg">
               </div>
               <div class="card-content">
-                <span class="card-title">NAND<i class="material-icons right">more_vert</i></span>
+                <span class="card-title">NAND<i class="material-icons right activator">more_vert</i></span>
               </div>
               <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">Not And Gate (¬∧)<i class="material-icons right">close</i></span>
@@ -107,7 +107,7 @@
               <img class="activator" src="Gates\xnor.jpg">
             </div>
             <div class="card-content">
-              <span class="card-title">XNOR<i class="material-icons right">more_vert</i></span>
+              <span class="card-title">XNOR<i class="material-icons right activator">more_vert</i></span>
             </div>
             <div class="card-reveal">
               <span class="card-title grey-text text-darken-4">Exclusive Not Or Gate (¬⊕)<i class="material-icons right">close</i></span>
@@ -204,20 +204,14 @@
               {
                 term = term.toUpperCase()
                 //To be run if they have input anything
-                if(term === "AND" ||
-                   term === "AND GATE" ||
-                   term === "A GATE" ||
-                   term === "A") {
+                if(["AND", "AND GATE", "A GATE", "A"].indexOf(term)) {
                      document.getElementById('00').innerHTML="0"
                      document.getElementById('01').innerHTML="0"
                      document.getElementById('10').innerHTML="0"
                      document.getElementById('11').innerHTML="1"
                      document.getElementById('info').innerHTML="The AND gate is a basic digital logic gate that implements logical conjunction. A HIGH output (1) results only if both the inputs to the AND gate are HIGH (1). If neither or only one input to the AND gate is HIGH, a LOW output results."
                    }
-                   else if(term === "NOT" ||
-                      term === "NOT GATE" ||
-                      term === "N GATE" ||
-                      term === "N") {
+                   else if(["NOT", "N", "NOT GATE", "N GATE"].indexOf(term)) {
                         /*document.getElementsByClassName('b').innerHTML="---" For some reason this does not update the elements on page*/ document.getElementById('b1').innerHTML="---"; document.getElementById('b2').innerHTML="---"; document.getElementById('b3').innerHTML="---"; document.getElementById('b4').innerHTML="---"; document.getElementById('a2').innerHTML="1"; document.getElementById('a3').innerHTML="---"; document.getElementById('a4').innerHTML="---";
                         document.getElementById('00').innerHTML="0"
                         document.getElementById('01').innerHTML="1"
@@ -225,25 +219,19 @@
                         document.getElementById('11').innerHTML="---"
                         document.getElementById('info').innerHTML="In digital logic, an inverter or NOT gate is a logic gate which implements logical negation. It essentially reverses the input."
                       }
-                      else if(term === "OR" ||
-                         term === "OR GATE" ||
-                         term === "R GATE" ||
-                         term === "V") {
+                      else if(["OR", "OR GATE", "V", "V GATE"].indexOf(term)) {
                            document.getElementById('00').innerHTML="0"
                            document.getElementById('01').innerHTML="1"
                            document.getElementById('10').innerHTML="1"
                            document.getElementById('11').innerHTML="1"
                            document.getElementById('info').innerHTML="The OR gate is a digital logic gate that implements logical disjunction. A HIGH output (1) results if one or both the inputs to the gate are HIGH (1). If neither input is high, a LOW output (0) results."
                          }
-                         else if(term === "OR" ||
-                            term === "OR GATE" ||
-                            term === "R GATE" ||
-                            term === "V") {
-                              document.getElementById('00').innerHTML="0"
-                              document.getElementById('01').innerHTML="1"
-                              document.getElementById('10').innerHTML="1"
+                         else if(["NOR", "NOT OR GATE", "OR NOT GATE", "NORGATE" "ON GATE", "NOR GATE"].indexOf(term)) {
+                              document.getElementById('00').innerHTML="1"
+                              document.getElementById('01').innerHTML="0"
+                              document.getElementById('10').innerHTML="0"
                               document.getElementById('11').innerHTML="1"
-                              document.getElementById('info').innerHTML="The OR gate is a digital logic gate that implements logical disjunction. A HIGH output (1) results if one or both the inputs to the gate are HIGH (1). If neither input is high, a LOW output (0) results."
+                              document.getElementById('info').innerHTML="The NOR gate is a digital logic gate that implements logical NOR. A HIGH output (1) results if both the inputs to the gate are LOW (0); if one or both input is HIGH (1), a LOW output (0) results. NOR is the result of the negation of the OR operator."
                             }
                           else { document.getElementById('info').innerHTML="The term you searched for could not be found" }
 
