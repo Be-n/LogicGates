@@ -204,14 +204,14 @@
               {
                 term = term.toUpperCase()
                 //To be run if they have input anything
-                if(["AND", "AND GATE", "A GATE", "A"].indexOf(term)) {
+                if((["AND", "AND GATE", "A GATE", "A"].indexOf(term)) > -1) {
                      document.getElementById('00').innerHTML="0"
                      document.getElementById('01').innerHTML="0"
                      document.getElementById('10').innerHTML="0"
                      document.getElementById('11').innerHTML="1"
                      document.getElementById('info').innerHTML="The AND gate is a basic digital logic gate that implements logical conjunction. A HIGH output (1) results only if both the inputs to the AND gate are HIGH (1). If neither or only one input to the AND gate is HIGH, a LOW output results."
                    }
-                   else if(["NOT", "N", "NOT GATE", "N GATE"].indexOf(term)) {
+                   else if((["NOT", "N", "NOT GATE", "N GATE"].indexOf(term)) > -1) {
                         /*document.getElementsByClassName('b').innerHTML="---" For some reason this does not update the elements on page*/ document.getElementById('b1').innerHTML="---"; document.getElementById('b2').innerHTML="---"; document.getElementById('b3').innerHTML="---"; document.getElementById('b4').innerHTML="---"; document.getElementById('a2').innerHTML="1"; document.getElementById('a3').innerHTML="---"; document.getElementById('a4').innerHTML="---";
                         document.getElementById('00').innerHTML="0"
                         document.getElementById('01').innerHTML="1"
@@ -219,14 +219,14 @@
                         document.getElementById('11').innerHTML="---"
                         document.getElementById('info').innerHTML="In digital logic, an inverter or NOT gate is a logic gate which implements logical negation. It essentially reverses the input."
                       }
-                      else if(["OR", "OR GATE", "V", "V GATE"].indexOf(term)) {
+                      else if((["OR", "OR GATE", "V", "V GATE"].indexOf(term)) > -1) {
                            document.getElementById('00').innerHTML="0"
                            document.getElementById('01').innerHTML="1"
                            document.getElementById('10').innerHTML="1"
                            document.getElementById('11').innerHTML="1"
                            document.getElementById('info').innerHTML="The OR gate is a digital logic gate that implements logical disjunction. A HIGH output (1) results if one or both the inputs to the gate are HIGH (1). If neither input is high, a LOW output (0) results."
                          }
-                         else if(["NOR", "NOT OR GATE", "OR NOT GATE", "NORGATE" "ON GATE", "NOR GATE"].indexOf(term)) {
+                         else if((["NOT OR", "NOR", "NOT OR GATE", "OR NOT GATE", "NORGATE", "ON GATE", "NOR GATE"].indexOf(term)) > -1) {
                               document.getElementById('00').innerHTML="1"
                               document.getElementById('01').innerHTML="0"
                               document.getElementById('10').innerHTML="0"
